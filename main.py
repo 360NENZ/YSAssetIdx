@@ -7,6 +7,7 @@ ai = AssetIndex.from_file("0000006f.bin")
 
 with open('mapped-updated.json', 'r') as f:
     mappedName = json.load(f)
+mappedGenerate = {}
 
 def loadTypeDict(ai):
     typeDict = {}
@@ -16,6 +17,8 @@ def loadTypeDict(ai):
 
 def loadSubAssets(ai):
     subAsset = {}
+    mappedCnt = 0
+
     for i in ai.assets:
         try: 
             subAssetInfo = {
@@ -23,16 +26,24 @@ def loadSubAssets(ai):
                 "PathHashPre": i.path_hash_pre,
                 "PathHashLast": i.path_hash_last
             }
+            mappedCnt += 1
+            mappedGenerate[str((i.path_hash_last << 8) | i.path_hash_pre)] = subAssetInfo["Name"]
+
         except:
             subAssetInfo = {
                 "Name": "",
                 "PathHashPre": i.path_hash_pre,
                 "PathHashLast": i.path_hash_last
             }
+            mappedGenerate[str((i.path_hash_last << 8) | i.path_hash_pre)] = ""
 
         if i.sub_asset_id not in subAsset:
             subAsset[i.sub_asset_id] = []
         subAsset[i.sub_asset_id].append(subAssetInfo)
+
+    print(f"{len(ai.assets) - mappedCnt} unmatched")
+    print(f"{mappedCnt}/{len(ai.assets)} {'{0:.2%}'.format(mappedCnt/len(ai.assets))}")
+
     return subAsset
 
 def loadBundleDependencyMap(ai):
@@ -77,3 +88,6 @@ assetindex_output = {
 
 with open('output_assetindex.json', 'w', encoding='utf-8') as f:
     json.dump(assetindex_output, f, ensure_ascii=False, indent=4, sort_keys=True)
+
+with open('output_mapped.json', 'w', encoding='utf-8') as f:
+    json.dump(mappedGenerate, f, ensure_ascii=False, indent=4)
