@@ -1,18 +1,9 @@
 import hashlib, json
 
 mapped = {
-    "371373618540": "ART/UI/Atlas/GachaSlotImg/UI_Costume_AmborCostumeWic",
-    "656244161384": "ART/UI/Atlas/GachaSlotImg/UI_Costume_AyakaCostumeBruhling", # test
-    "1092633568505": "ART/UI/Atlas/GachaSlotImg/UI_Costume_BarbaraCostumeSummertime",
-    "253200261877": "ART/UI/Atlas/GachaSlotImg/UI_Costume_DilucCostumeFlamme",
-    "154775512325": "ART/UI/Atlas/GachaSlotImg/UI_Costume_FischlCostumeHighness",
-    "1098632683755": "ART/UI/Atlas/GachaSlotImg/UI_Costume_KeqingCostumeFeather",
-    "228158811228": "ART/UI/Atlas/GachaSlotImg/UI_Costume_LisaCostumeStudentin",
-    "983654557316": "ART/UI/Atlas/GachaSlotImg/UI_Costume_MonaCostumeWic",
-    "627358202102": "ART/UI/Atlas/GachaSlotImg/UI_Costume_NingguangCostumeFloral",
-    "878193737078": "ART/UI/Atlas/GachaSlotImg/UI_Costume_QinCostumeSea",
-    "1058334083707": "ART/UI/Atlas/GachaSlotImg/UI_Costume_QinCostumeWic",
-    "753231826581": "ART/UI/Atlas/GachaSlotImg/UI_Costume_RosariaCostumeWic",
+    "347916310387": "Data/_BinOutput/Ability/Temp/AvatarAbilities/ConfigAbility_Avatar_Lisa",
+    "232447844481": "Data/_BinOutput/Ability/Temp/AvatarAbilities/ConfigAbility_Avatar_Mika",
+    "376888510756": "Data/_BinOutput/Ability/Temp/AvatarAbilities/ConfigAbility_Avatar_Mona",
 }
 
 
